@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_one_attached :image, :dependent => :destroy
   has_secure_password
 
   before_save :downcase_email, :capitalize_first_name, :capitalize_last_name
