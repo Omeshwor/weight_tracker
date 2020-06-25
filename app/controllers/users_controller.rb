@@ -36,6 +36,10 @@ class UsersController < ApplicationController
 
 
   def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:danger] = "User and all associated data is destroyed"
+    redirect_to root_path
   end
 
 
