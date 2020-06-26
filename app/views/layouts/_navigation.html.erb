@@ -17,7 +17,7 @@
 				</li>
 				<li class="nav-item">
 					<% if !logged_in? %>
-						<%= link_to "Sign Up!", new_user_path, class: "nav-link", tabindex:"-1" %>
+						<%= link_to "Sign Up", new_user_path, class: "nav-link", tabindex:"-1" %>
 					<% end %>
 				</li>
 			</ul>
@@ -31,10 +31,10 @@
 						<%= link_to "Settings", "edit_user_path", class: "dropdown-item" %>
 						<%= link_to "Show profile", "#", class: "dropdown-item" %>
 						<div class="dropdown-divider"></div>
-						<%= link_to "Log Out", "#", class: "dropdown-item" %>
+						<%= link_to "Log Out", logout_path, method: :delete, class: "dropdown-item" %>
 					</div>
 				<% else %>
-						<%= link_to "Login", login_path, class: "dropdown-item" %>
+						<%= link_to "Log In", login_path, class: "dropdown-item" %>
 				</li>
 				<% end %>
 
