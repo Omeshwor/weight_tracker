@@ -16,28 +16,27 @@
 					<%= link_to "link3", "#", class: "nav-link" %>
 				</li>
 				<li class="nav-item">
-					<%# if !logged_in? %>
+					<% if !logged_in? %>
 						<%= link_to "Sign Up!", new_user_path, class: "nav-link", tabindex:"-1" %>
-					<%# end %>
+					<% end %>
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<%# if logged_in? %>
-
+				<% if logged_in? %>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<%#= current_customer.first_name %>
+						<%= current_user.first_name %>
 					</a>
 					<div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="navbarDropdown">
-						<%= link_to "Settings", "#", class: "dropdown-item" %>
+						<%= link_to "Settings", "edit_user_path", class: "dropdown-item" %>
 						<%= link_to "Show profile", "#", class: "dropdown-item" %>
 						<div class="dropdown-divider"></div>
 						<%= link_to "Log Out", "#", class: "dropdown-item" %>
 					</div>
-				<%# else %>
-						<%#= link_to "Login", login_path, class: "dropdown-item" %>
+				<% else %>
+						<%= link_to "Login", login_path, class: "dropdown-item" %>
 				</li>
-				<%# end %>
+				<% end %>
 
 			</ul>
 		</div>
