@@ -5,8 +5,19 @@
     </div>
   <% end %>
   <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-  <h2><%= @user.email %></h2>
 
- <%= link_to "Edit", edit_user_path(@user), class:"btn btn-primary" %> | 
- <%= link_to "Delete", user_path(@user), method: :delete, class:"btn btn-danger", data: {confirm: "Are you sure?"} %> 
+  <%= form_for(:user_weight, url: user_weight_path) do |f| %>
+    <div class="form-group row">
+      <div class="col-form-label col-sm-3">
+        <%= f.label :weight %>
+      </div>
+      <div class="col-sm-4">
+        <%= f.number_field :weight, step: 0.1, class: "form-control",
+            autofocus: true %>
+      </div>
+      <%= f.submit "Save", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+ <%= link_to "Edit", edit_user_path(@user), class:"btn btn-primary" %> |
+ <%= link_to "Delete", user_path(@user), method: :delete, class:"btn btn-danger", data: {confirm: "Are you sure?"} %>
 </div>
