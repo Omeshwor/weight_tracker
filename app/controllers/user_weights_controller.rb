@@ -10,9 +10,13 @@ class UserWeightsController < ApplicationController
     end
   end
 
+  def show
+    @user_weight = UserWeight.find(params[:id])
+  end
+
 
   private
   def weight_params
-    params.require(:user_weight).permit(:weight)
+    params.require(:user_weights).permit(:weight)
   end
 end

@@ -6,7 +6,7 @@
   <% end %>
   <h1><%= @user.first_name %> <%= @user.last_name %></h1>
 
-  <%= form_for(:user_weight, url: user_weight_path) do |f| %>
+  <%= form_for(:user_weights, url: user_weights_path) do |f| %>
     <div class="form-group row">
       <div class="col-form-label col-sm-3">
         <%= f.label :weight %>

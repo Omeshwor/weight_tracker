@@ -1,0 +1,13 @@
+<div align="center">
+  <% if @user_weight.user.image.attached? %>
+    <div>
+        <%= image_tag @user_weight.user.image %>
+    </div>
+  <% end %>
+  <h1><%= @user_weight.user.first_name %> <%= @user_weight.user.last_name %></h1>
+  <h2><%= @user_weight.weight %></h2>
+  <h3><%= @user_weight.created_at %></h3>
+  <h3><%= @user_weight.updated_at %></h3>
+
+  <%= link_to 'Update', edit_user_weight_path(@user_weight), class: "btn btn-secondary" %>
+</div>

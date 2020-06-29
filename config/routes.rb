@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   post  'user_weight', to: 'user_weights#create'
-  
+  # get   'user_weight', to: 'user_weights#show'
 
   resources :users
+  resources :user_weights
+
 end
