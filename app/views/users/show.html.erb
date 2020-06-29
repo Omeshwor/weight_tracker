@@ -6,7 +6,30 @@
   <% end %>
   <h1><%= @user.first_name %> <%= @user.last_name %></h1>
 
-  <%= form_for(:user_weights, url: user_weights_path) do |f| %>
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Entered Date</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @userWeights.each do |user_weight| %>
+    <tr>
+      <th scope="row"><% user_weight.id %></th>
+      <td><%= user_weight.created_at %></td>
+      <td><%= user_weight.weight %></td>
+      <td><%= link_to "update", edit_user_weight_path(user_weight), class: "btn btn-info" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+  <%= form_for(:user_weight, url: user_weights_path) do |f| %>
     <div class="form-group row">
       <div class="col-form-label col-sm-3">
         <%= f.label :weight %>

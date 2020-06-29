@@ -1,24 +1,9 @@
-# README
+Weight Tracker with postgresql, rails 6.0
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Added Bootstrap, jquery, popper
 
-Things you may want to cover:
+Added bcrypt for authentication security
 
-* Ruby version
+Added better_errors for better readability of errors
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+User able to track weight to .0

@@ -1,0 +1,12 @@
+<%= form_for(@user_weight) do |f| %>
+  <div class="form-group row">
+    <div class="col-form-label col-sm-3">
+      <%= f.label :weight %>
+    </div>
+    <div class="col-sm-4">
+      <%= f.number_field :weight, step: 0.1, class: "form-control",
+          autofocus: true %>
+    </div>
+    <%= f.submit "Update", class: "btn btn-primary" %>
+  </div>
+<% end %>
