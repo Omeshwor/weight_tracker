@@ -6,9 +6,11 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<%= link_to "Link1", '#', class: "nav-link" %>
-				</li>
+				<% if logged_in? %>
+					<li class="nav-item">
+						<%= link_to "Show My Weights", user_path(current_user), class: "nav-link" %>
+					</li>
+				<% end %>
 				<li class="nav-item">
 					<%= link_to "link2", '#', class: "nav-link" %>
 				</li>

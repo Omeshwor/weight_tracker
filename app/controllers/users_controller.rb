@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:edit, :update, :show, :destroy]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
+
   def index
   end
 
@@ -17,17 +20,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @userWeights = current_user.user_weights.order(:created_at)
+    @userWeights = @user.user_weights.order(:created_at).paginate(page: params[:page], per_page: 10)
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
+    if @user.update(user_params)
       flash[:success] = "Information updated successfully"
       redirect_to user_path(@user)
     else
@@ -37,7 +37,6 @@ class UsersController < ApplicationController
 
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
     flash[:danger] = "User and all associated data is destroyed"
     redirect_to root_path
@@ -48,6 +47,17 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :image)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def require_same_user
+    if current_user != @user
+      flash[:danger] = "You do not have access for this action"
+      redirect_to root_path
+    end
   end
 
 end
