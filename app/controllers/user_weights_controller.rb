@@ -30,6 +30,12 @@ class UserWeightsController < ApplicationController
     end
   end
 
+  def destroy
+    @user_weight.destroy
+    flash[:danger] = "Weight deleted"
+    redirect_to user_path(current_user)
+  end
+
 
   private
   def weight_params
