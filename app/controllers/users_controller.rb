@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
+    @users = User.all
   end
 
   def new
@@ -12,7 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Welcome to the weight tracker #{@user.first_name} #{@user.last_name}"
+      flash[:success] = "Welcome to the weight tracker #{@user.full_name}"
       redirect_to user_path(@user)
     else
       render 'new'

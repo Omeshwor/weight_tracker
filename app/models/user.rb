@@ -16,6 +16,11 @@ class User < ApplicationRecord
 										uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX }
 	validates :password, presence: true, length: {minimum: 6, maximum: 10}
 
+  def full_name
+    return "#{first_name} #{last_name}" if first_name || last_name
+    "Anonymous"
+  end
+
   private
 
   def downcase_email
