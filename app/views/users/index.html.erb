@@ -1,2 +1,21 @@
-<%= @users.each do |user| %>
-<%= user.full_name %>
+<table class="table table-borderless">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <th scope="row"><%= user.id %></th>
+        <td><%= user.full_name %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to "Add to friends", friendships_path(friend: user),
+                class:"btn btn-sm btn-warning", method: :post %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
