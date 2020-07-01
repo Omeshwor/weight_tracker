@@ -16,4 +16,11 @@ class FriendshipsController < ApplicationController
     @tracked_friends  = current_user.friends.order(:created_at).paginate(page: params[:page], per_page: 10)
   end
 
+  def destroy
+    friendship = current_user.friendships.where(friend_id: params[:id]).first
+    friendship.destroy
+    flash[:alert] = "Friend removed successfully"
+    redirect_to friendship_path(current_user)
+  end
+
 end

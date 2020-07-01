@@ -16,10 +16,10 @@
         <td><%= friend.full_name %></td>
         <td><%= friend.email %></td>
         <td>
-          <%= link_to "Edit Weight", "#",
+          <%= link_to "Show Friend info", user_path(friend),
               class: "btn btn-info" %> |
-          <%= link_to "Delete Weight", "#" ,
-              class: "btn btn-danger" %>
+          <%= link_to "Remove Friend", friendship_path(friend), method: :delete,
+              data: {confirm: "Are you sure?"},class: "btn btn-danger" %>
         </td>
       </tr>
       <% end %>
