@@ -10,13 +10,13 @@
 					<li class="nav-item">
 						<%= link_to "Show My Weights", user_path(current_user), class: "nav-link" %>
 					</li>
-				<% end %>
 				<li class="nav-item">
 					<%= link_to "All Users", users_path, class: "nav-link" %>
 				</li>
 				<li class="nav-item">
-					<%= link_to "link3", "#", class: "nav-link" %>
+					<%= link_to "My Friends", friendship_path(current_user), class: "nav-link" %>
 				</li>
+			<% end %>
 				<li class="nav-item">
 					<% if !logged_in? %>
 						<%= link_to "Sign Up", new_user_path, class: "nav-link", tabindex:"-1" %>
