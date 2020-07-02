@@ -23,4 +23,9 @@ document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
   $('[data-toggle="popover"]').popover()
 })
- 
+
+$(document).ready(function(){
+    $('.alert').slideUp(5000, function(){
+        $(this).remove();
+    });
+});

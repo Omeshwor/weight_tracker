@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       flash[:success] = "Welcome to the weight tracker #{@user.full_name}"
       redirect_to user_path(@user)
     else
@@ -38,8 +39,12 @@ class UsersController < ApplicationController
 
 
   def destroy
+    @user.user_weights.destroy_all
+    @user.friendships.where(user_id: @user).destroy_all
+    @user.friendships.where(friend_id: @user).destroy_all
     @user.destroy
     flash[:danger] = "User and all associated data is destroyed"
+    session[:user_id] = nil
     redirect_to root_path
   end
 

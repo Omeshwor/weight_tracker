@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-  has_one_attached :image, :dependent => :destroy
-  has_many :user_weights
-  has_many :friendships
-  has_many :friends, through: :friendships
+  has_one_attached :image, dependent: :destroy
+  has_many :user_weights, dependent: :destroy
+  has_many :friendships, dependent: :destroy
+  has_many :friends, through: :friendships, dependent: :destroy
   has_secure_password
 
   before_save :downcase_email, :capitalize_first_name, :capitalize_last_name
