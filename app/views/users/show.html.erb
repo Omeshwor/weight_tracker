@@ -18,7 +18,8 @@
     </div>
   <% end %>
   <% if @user.user_weights.any? %>
-  <%= column_chart @userWeights.group_by_day(:created_at).count, min: 0.0, max: 999.0 %>
+  <%= line_chart @userWeights.pluck(:created_at, :weight),
+      xtitle: "Entered Time", ytitle: "Weight"%>
     <table class="table table-striped table-dark">
       <thead>
         <tr>
