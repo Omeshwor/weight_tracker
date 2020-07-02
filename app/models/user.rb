@@ -21,6 +21,20 @@ class User < ApplicationRecord
     "Anonymous"
   end
 
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ?
+           BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+  end
+
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  def remember
+    self.remember_token = User.new_token
+    update_attributes(:remember_digest, User.digest(remember_token))
+  end
+
   private
 
   def downcase_email
