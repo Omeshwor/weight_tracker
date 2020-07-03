@@ -26,8 +26,14 @@ gem 'will_paginate', '~> 3.3'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
+
+# Create beautiful JavaScript charts with one line of Ruby
 gem 'chartkick'
+# The simplest way to group temporal data
 gem 'groupdate'
+
+#Faker is used to easily generate fake data: names, addresses, phone numbers, etc.
+gem 'faker', '~> 2.13'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
