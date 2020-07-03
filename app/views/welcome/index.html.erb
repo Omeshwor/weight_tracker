@@ -2,9 +2,11 @@
   <div class="container">
     <h1 align="center" class="display-4" >Welcome to Weight Tracker</h1>
     <p  align="center" class="lead">This application is designed to help you keep track of your weight</p>
-    <div align="center">
-      <%= link_to "Sign Up", new_user_path, class:"btn btn-secondary" %> |
-      <%= link_to 'Log In', login_path, class: "btn btn-secondary" %>
-    </div>
+    <% if !logged_in? %>
+      <div align="center">
+        <%= link_to "Sign Up", new_user_path, class:"btn btn-secondary" %> |
+        <%= link_to 'Log In', login_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
   </div>
 </div>
