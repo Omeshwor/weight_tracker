@@ -1,0 +1,15 @@
+current directory: /home/omeshwor/all_projects/rails_projects/weight_tracker/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.2/ext/websocket-driver
+/usr/share/rvm/rubies/ruby-2.7.0/bin/ruby -I /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/site_ruby/2.7.0 -r ./siteconf20200817-27289-9iw2mz.rb extconf.rb
+creating Makefile
+
+current directory: /home/omeshwor/all_projects/rails_projects/weight_tracker/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.2/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/omeshwor/all_projects/rails_projects/weight_tracker/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.2/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/omeshwor/all_projects/rails_projects/weight_tracker/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.2/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -m 0755 websocket_mask.so ./.gem.20200817-27289-1rw6e4l

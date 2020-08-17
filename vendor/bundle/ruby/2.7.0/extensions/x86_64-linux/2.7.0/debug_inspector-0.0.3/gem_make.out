@@ -1,0 +1,15 @@
+current directory: /home/omeshwor/all_projects/rails_projects/weight_tracker/vendor/bundle/ruby/2.7.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+/usr/share/rvm/rubies/ruby-2.7.0/bin/ruby -I /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/site_ruby/2.7.0 -r ./siteconf20200817-27289-19hgtnv.rb extconf.rb
+creating Makefile
+
+current directory: /home/omeshwor/all_projects/rails_projects/weight_tracker/vendor/bundle/ruby/2.7.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /home/omeshwor/all_projects/rails_projects/weight_tracker/vendor/bundle/ruby/2.7.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+current directory: /home/omeshwor/all_projects/rails_projects/weight_tracker/vendor/bundle/ruby/2.7.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -m 0755 debug_inspector.so ./.gem.20200817-27289-rg6lmc
