@@ -25,7 +25,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '~> 3.3'
 
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 
 # Create beautiful JavaScript charts with one line of Ruby
 gem 'chartkick'
